@@ -39,6 +39,7 @@ function RenderCard({item, isLoading, errMess}) {
 
 function Home(props) {
     return(
+        <div style={{backgroundColor: '#bbc1f073'}}>
         <div className="container">
             <div className="row align-items-start">
                 <div className="col-12 col-md m-1">
@@ -55,6 +56,7 @@ function Home(props) {
                     errMess={props.leadersErrMess} />
                 </div>
             </div>
+        </div>
         </div>
     );
 }

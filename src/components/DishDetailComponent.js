@@ -28,7 +28,7 @@ class CommentForm extends Component {
     }
     handleSubmit(values) {
       this.toggleModal();
-      this.props.addComment(this.props.dishId, values.rating, values.author, values.comment);
+      this.props.addComment(this.props.dishId, values.rating, values.name, values.comment);
         // event.preventDefault();
     }
     render() {
@@ -48,6 +48,7 @@ class CommentForm extends Component {
                                 <Col md={12}>
                                     <Control.select
                                         model=".rating"
+                                        id="rating" 
                                         name="rating"
                                         className="form-control"
                                     >
@@ -128,24 +129,25 @@ class CommentForm extends Component {
       return <div></div>;
     }
     //Traversing through all the comments
-    const cmnts = comments.map((comment) => {
+    const cmnts = comments.slice(0,4).map((comment) => {
       return (
         <li key={comment.id}>
-          <p>{comment.comment}</p>
-          <p>
-            -- {comment.author}, &nbsp;
-            {new Intl.DateTimeFormat("en-US", {
+          <h5 style={{fontFamily: 'cursive'}}>" {comment.comment} "</h5>
+          <h6 style={{fontFamily: 'cursive'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          --  {comment.author} ,&nbsp;&nbsp;&nbsp;{new Intl.DateTimeFormat("en-US", {
               year: "numeric",
               month: "long",
               day: "2-digit",
             }).format(new Date(comment.date))}
-          </p>
+          </h6>
+          <br></br>
         </li>
       );
     });
     return (
       <div className="col-12 ">
-        <h4> Comments </h4>
+        <br></br>
+        <h4 style={{fontFamily: 'cursive'}}> Comments </h4><br></br>
         <ul className="list-unstyled">{cmnts}</ul>
         <CommentForm  dishId={dishId} addComment={addComment} />
       </div>
@@ -153,7 +155,6 @@ class CommentForm extends Component {
   }
 
   const  DishDetail = (props) => {
-
     const dish = props.dish;
     if (dish == null) {
       return <div></div>;
@@ -178,28 +179,30 @@ class CommentForm extends Component {
     }
     else if (props.dish != null) {
       return (
-        <div className="container">
-          <div className="row">
-            <Breadcrumb>
-              <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
-              <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
-            </Breadcrumb>
-            <div className="col-12">
-              <h3>{props.dish.name}</h3>
-              <hr />
-            </div>                
-          </div>
-          <div className="row">
-            <div className="col-12 col-md-5 m-1">
-              <RenderDish dish={props.dish} />
+        <div style={{backgroundColor: '#bbc1f073', padding: '60px 0px'}}>
+          <div className="container">
+            <div className="row">
+              <Breadcrumb>
+                <BreadcrumbItem><Link to="/menu">Menu</Link></BreadcrumbItem>
+                <BreadcrumbItem active>{props.dish.name}</BreadcrumbItem>
+              </Breadcrumb>
+              <div className="col-12">
+                <h3>{props.dish.name}</h3>
+                <hr />
+              </div>                
             </div>
+            <div className="row">
+              <div className="col-12 col-md-5 m-1">
+                <RenderDish dish={props.dish} />
+              </div>
 
-            <div className="col-12 col-md-5 m-1">
-              <div className="row">
-              <RenderComments comments={props.comments}
-                addComment={props.addComment}
-                dishId={props.dish.id}
-              />
+              <div className="col-12 col-md-5 m-1">
+                <div className="row" style={{ }}>
+                <RenderComments comments={props.comments}
+                  addComment={props.addComment}
+                  dishId={props.dish.id}
+                />
+                </div>
               </div>
             </div>
           </div>

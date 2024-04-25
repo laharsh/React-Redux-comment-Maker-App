@@ -13,10 +13,20 @@ export const Comments = (state = {
 
         case ActionTypes.ADD_COMMENT:
             var comment = action.payload;
-            comment.id = state.comments.length;
+            comment.dishId = parseInt(comment.dishId);
+            comment.rating = parseInt(comment.rating);
+            comment.id = state.comments.length.toString();
+            console.log("id", comment.id.toString(), state.comments.length);
             comment.date = new Date().toISOString();
             console.log("Comment: ", comment);
-            return {...state, comments: state.comments.concat(comment)};
+            var updatedComments = state.comments.concat(comment);
+            // Sort the comments array based on their dates (in ascending order)
+            updatedComments.sort((a, b) => new Date(a.date) - new Date(b.date));
+
+            console.log("updatedComments",updatedComments);
+
+            // Return the updated state with the sorted comments array
+            return {...state, comments: updatedComments};
 
         default:
           return state;

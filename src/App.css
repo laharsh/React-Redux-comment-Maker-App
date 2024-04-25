@@ -11,14 +11,14 @@
 }
 
 .footer{
-    background-color: #f0efef;
+    background-color: #f3f4ff9c;
     margin:0px auto;
     padding: 20px 0px 20px 0px;
 }
 .jumbotron {
     padding:70px 30px 70px 30px;
     margin:0px auto;
-    background:  #eaece5;
+    background: #95a0f673;
     color:#020f16;
 }
 
@@ -34,7 +34,7 @@ address{
 }
 
 .navbar-dark {
-    background-color:    #484f4f;
+    background-color: black;
 }
 
 .page-enter {
@@ -61,4 +61,77 @@ address{
     background: #fff5d7 ;
     transform: translateX(100%);
     transition: all 300ms ease-out;
+}
+
+.card-body {
+    display: flex;
+    -ms-flex: 1 1 auto;
+    flex: 1 1 auto;
+    padding: 1.25rem;
+    flex-direction: column;
+    height: 229px;
+    overflow: auto; 
+    text-overflow: ellipsis;
+}
+
+.card-img {
+    width: 100%;
+    height: 254px;
+    border-radius: calc(.25rem - 1px);
+}
+
+.about{
+    .card{
+        height: 338px;
+        width: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        @media only screen and (max-width: 768px) {
+            height: 384px;
+            flex-direction: column; 
+        }
+        .image{
+            width: 40%;
+            height: 338px;
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+                height: 198px;
+            }
+            img{
+                width: 100%;
+                object-fit: cover;
+                height: 100%;
+                @media only screen and (max-width: 768px) {
+                    object-fit: fill;
+                }
+            }
+            }
+        }
+        .body{
+            width: 72%;
+            padding: 35px;
+            font-size: 20px;
+            overflow: auto;
+            white-space: normal;
+            @media only screen and (max-width: 768px) {
+                width: 100%;
+                padding: 14px;
+            }
+            
+        }
+
+}
+
+.align-items-start {
+    padding: 42px 0px;
+    -ms-flex-align: start !important;
+    align-items: flex-start !important;
+}
+
+.btn-outline-secondary {
+    color: #fff;
+    background-color: #02020d;
+    border-color: #010106;
+    border-radius: 17px;
 }
