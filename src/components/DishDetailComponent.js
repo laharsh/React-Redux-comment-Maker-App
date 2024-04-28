@@ -132,8 +132,8 @@ class CommentForm extends Component {
     const cmnts = comments.slice(0,4).map((comment) => {
       return (
         <li key={comment.id}>
-          <h5 style={{fontFamily: 'cursive'}}>" {comment.comment} "</h5>
-          <h6 style={{fontFamily: 'cursive'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+          <h5 style={{fontFamily: 'math'}}>" {comment.comment} "</h5>
+          <h6 style={{ fontFamily: 'math', letterSpacing : '1px'}}>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
           --  {comment.author} ,&nbsp;&nbsp;&nbsp;{new Intl.DateTimeFormat("en-US", {
               year: "numeric",
               month: "long",
@@ -147,7 +147,7 @@ class CommentForm extends Component {
     return (
       <div className="col-12 ">
         <br></br>
-        <h4 style={{fontFamily: 'cursive'}}> Comments </h4><br></br>
+        <h4 style={{fontFamily: 'math'}}> Comments </h4><br></br>
         <ul className="list-unstyled">{cmnts}</ul>
         <CommentForm  dishId={dishId} addComment={addComment} />
       </div>
