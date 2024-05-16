@@ -1,4 +1,4 @@
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+This project was deployed at ![commet maker](https://comment-maker.vercel.app/home).
 
 ![comment maker](https://github.com/laharsh/React-Redux-comment-Maker-App/assets/152136808/6db85688-0934-4a49-9644-b29021707fe7)
 
