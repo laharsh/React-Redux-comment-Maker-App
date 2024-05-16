@@ -1,4 +1,4 @@
-This project was built using Create React APp.
+This project was built using [Create React App].
 
 ![comment maker](https://github.com/laharsh/React-Redux-comment-Maker-App/assets/152136808/6db85688-0934-4a49-9644-b29021707fe7)
 
