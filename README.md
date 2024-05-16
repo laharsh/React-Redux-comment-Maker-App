@@ -1,4 +1,4 @@
-This project was deployed at ![commet maker](https://comment-maker.vercel.app/home).
+This project was built using Create React APp.
 
 ![comment maker](https://github.com/laharsh/React-Redux-comment-Maker-App/assets/152136808/6db85688-0934-4a49-9644-b29021707fe7)
 
@@ -9,7 +9,7 @@ In the project directory, you can run:
 ### `yarn start`
 
 Runs the app in the development mode.<br />
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Open [https://comment-maker.vercel.app/home](https://comment-maker.vercel.app/home) to view it in the browser.
 
 The page will reload if you make edits.<br />
 You will also see any lint errors in the console.
